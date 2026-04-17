@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Play, Plus, ArrowUpRight } from "lucide-react";
@@ -60,7 +60,7 @@ export default function DarkShowcase() {
         <div className="flex flex-col relative z-[100] md:-mt-32 lg:-mt-48 w-full lg:w-[320px] xl:w-[400px] shrink-0">
           <div className="hero-overlap-image relative rounded-[24px] overflow-hidden shadow-2xl aspect-[4/3] w-full max-w-[400px] mx-auto lg:mx-0 group">
             <img
-              src={babyImg}
+              src={babyImg.src}
               alt="Baby with pacifier"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               loading="lazy"
@@ -74,7 +74,7 @@ export default function DarkShowcase() {
             <p className="text-base text-gray-300 leading-relaxed max-w-[320px] mx-auto lg:mx-0">
               Watch how every piece is thoughtfully crafted to support your baby's development.
             </p>
-            <Link to="/shop" className="flex items-center gap-3 mt-8 group mx-auto lg:mx-0 w-fit">
+            <Link href="/shop" className="flex items-center gap-3 mt-8 group mx-auto lg:mx-0 w-fit">
               <span className="text-base font-semibold tracking-wide border-b border-white group-hover:border-accent-orange transition-colors pb-1.5 text-white group-hover:text-accent-orange">Shop Accessories</span>
               <span className="bg-white/5 p-3 rounded-xl group-hover:bg-white/10 transition-colors">
                 <ArrowUpRight className="w-5 h-5 text-white" />

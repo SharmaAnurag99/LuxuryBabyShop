@@ -28,7 +28,7 @@ export default function RealNurseries() {
           {/* Left - Images */}
           <motion.div variants={fadeUp} className="flex gap-4">
             <img
-              src={nurseryReal1Img}
+              src={nurseryReal1Img.src}
               alt="Real nursery with crib"
               className="w-1/2 h-[300px] rounded-2xl object-cover"
               loading="lazy"
@@ -37,7 +37,7 @@ export default function RealNurseries() {
             />
             <div className="w-1/2 flex flex-col gap-4">
               <img
-                src={nurseryReal2Img}
+                src={nurseryReal2Img.src}
                 alt="Nursery corner with highchair"
                 className="h-[180px] rounded-2xl object-cover"
                 loading="lazy"

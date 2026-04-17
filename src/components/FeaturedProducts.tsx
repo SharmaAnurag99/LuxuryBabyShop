@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Plus, ArrowUpRight } from "lucide-react";
@@ -68,7 +68,7 @@ export default function FeaturedProducts() {
             FEATURED <br className="hidden md:block" />
             APPARELS
           </h2>
-          <Link to="/shop" className="bg-chocolate-light border border-cream/20 text-cream px-8 py-3 rounded-full text-xs font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-cream hover:text-chocolate transition-all group">
+          <Link href="/shop" className="bg-chocolate-light border border-cream/20 text-cream px-8 py-3 rounded-full text-xs font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-cream hover:text-chocolate transition-all group">
             VIEW PRODUCT <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>

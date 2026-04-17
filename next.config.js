@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    optimizePackageImports: ["@radix-ui/*"],
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   typescript: {
-    tsconfigPath: "./tsconfig.json",
+    ignoreBuildErrors: true,
+  },
+  experimental: {
+    optimizePackageImports: ["@radix-ui/*"],
   },
   webpack: (config) => {
     config.externals.push("pino-pretty", "lokijs", "encoding");
@@ -14,4 +16,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

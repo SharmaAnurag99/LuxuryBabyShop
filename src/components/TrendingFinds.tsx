@@ -24,11 +24,11 @@ function YellowFlower({ className }: { className?: string }) {
 }
 
 const categories = [
-  { label: "Baby Cribs & Bassinets", img: cribImg, span: "col-span-1 row-span-2" },
+  { label: "Baby Cribs & Bassinets", img: cribImg.src, span: "col-span-1 row-span-2" },
   { label: "21 New Arrivals", img: bouncerImg, span: "col-span-1" },
-  { label: "Baby Toys", img: babyToysImg, span: "col-span-1" },
-  { label: "Baby Gear", img: babyGearImg, span: "col-span-1" },
-  { label: "Dr. Sleep Collection", img: cribImg, span: "col-span-1" },
+  { label: "Baby Toys", img: babyToysImg.src, span: "col-span-1" },
+  { label: "Baby Gear", img: babyGearImg.src, span: "col-span-1" },
+  { label: "Dr. Sleep Collection", img: cribImg.src, span: "col-span-1" },
 ];
 
 export default function TrendingFinds() {
