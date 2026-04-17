@@ -112,7 +112,7 @@ export default function LovedByFamilies() {
           <div className="family-image order-1 lg:order-2 w-full h-[400px] lg:h-[500px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative group">
             <div className="absolute inset-0 bg-chocolate/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
             <img
-              src="https://images.unsplash.com/photo-1559454403-b8fb88521f11?q=80&w=800&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=800&auto=format&fit=crop"
               alt="Happy family with fashionable baby"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               loading="lazy"

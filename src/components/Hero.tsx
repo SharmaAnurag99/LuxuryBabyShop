@@ -3,7 +3,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { Heart, ArrowUpRight, Flower2 } from "lucide-react";
 import highchairImg from "@/assets/highchair.png";
-import babyImg from "@/assets/baby-pacifier.jpg";
+import babyImg from "@/assets/black.jpg";
 import Cribimg from "@/assets/crib.jpg";
 // Make sure to save the image you uploaded to the src/assets folder as "hero-romper.png"
 import heroRomperImg from "@/assets/hero-romper.png";
@@ -140,7 +140,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[90vh] bg-cream pt-20 pb-32 overflow-visible flex flex-col items-center justify-center z-20">
+    <section ref={containerRef} className="relative w-full min-h-[90vh] bg-cream pt-20 pb-32 overflow-visible border-radius-lg flex flex-col items-center justify-center z-20">
       {/* Background Typography */}
       <h1 className="hero-title absolute top-12 left-0 right-0 text-center font-serif text-[18vw] leading-[0.8] text-chocolate tracking-tight select-none pointer-events-none z-0 mix-blend-multiply opacity-5">
         BABY WEAR
@@ -227,7 +227,7 @@ export default function Hero() {
           </div>
 
           {/* Black Friday Card */}
-          <div className="fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
+          <div className=" fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
             <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-inner">
               <img
                 src={Cribimg.src}

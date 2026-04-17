@@ -87,7 +87,7 @@ export default function DarkShowcase() {
         <div className="showcase-item flex flex-col sm:flex-row gap-8 items-center flex-1 max-w-[500px]">
           <div className="relative shrink-0 group cursor-pointer w-40 h-48 bg-[#3d241c] rounded-[24px] flex items-center justify-center p-6 shadow-xl border border-white/5">
             <img
-              src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=400&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1542355581-caf7454785ca?q=80&w=400&auto=format&fit=crop"
               alt="Baby romper"
               className="w-full h-full object-cover rounded-xl relative z-10 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"
               loading="lazy"
