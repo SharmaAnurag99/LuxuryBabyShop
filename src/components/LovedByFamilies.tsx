@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import familyNurseryImg from "@/assets/family-nursery.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -102,6 +103,9 @@ export default function LovedByFamilies() {
             <p className="text-lg lg:text-xl text-text-muted-dark font-medium max-w-md leading-relaxed">
               Don't just take our word for it, hear from parents who've brought our pieces into their homes.
             </p>
+            <Link href="/shop" className="mt-8 bg-chocolate text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-black transition-colors w-full sm:w-auto justify-center group shadow-md">
+              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
           </div>
 
           {/* Right - Image */}

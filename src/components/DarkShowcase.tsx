@@ -75,7 +75,7 @@ export default function DarkShowcase() {
               Watch how every piece is thoughtfully crafted to support your baby's development.
             </p>
             <Link href="/shop" className="flex items-center gap-3 mt-8 group mx-auto lg:mx-0 w-fit">
-              <span className="text-base font-semibold tracking-wide border-b border-white group-hover:border-accent-orange transition-colors pb-1.5 text-white group-hover:text-accent-orange">Shop Accessories</span>
+              <span className="text-base font-semibold tracking-wide border-b border-white group-hover:border-accent-orange transition-colors pb-1.5 text-white group-hover:text-accent-orange">Shop Now</span>
               <span className="bg-white/5 p-3 rounded-xl group-hover:bg-white/10 transition-colors">
                 <ArrowUpRight className="w-5 h-5 text-white" />
               </span>

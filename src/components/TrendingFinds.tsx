@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import cribImg from "@/assets/crib.jpg";
 import babyToysImg from "@/assets/baby-toys.jpg";
 import babyGearImg from "@/assets/baby-gear.jpg";
@@ -50,10 +51,10 @@ export default function TrendingFinds() {
           </h2>
           <div className="flex items-center gap-3">
             <YellowFlower className="w-10 h-10 text-accent-yellow" />
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold">View All Categories</span>
-              <ArrowUpRight className="w-3 h-3" />
-            </div>
+            <Link href="/shop" className="flex items-center gap-2 group cursor-pointer">
+              <span className="text-sm font-semibold tracking-wider uppercase border-b border-chocolate/30 group-hover:border-chocolate transition-colors pb-0.5">Shop Now</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
           </div>
         </motion.div>
 

@@ -222,7 +222,7 @@ export default function Hero() {
               Baby <span className="font-serif italic text-accent-orange">Apparels,</span> Beautifully <span className="font-serif italic">Knit</span>
             </p>
             <Link href="/shop" className="mt-8 bg-chocolate text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-black transition-colors w-full lg:w-auto justify-center group">
-              SHOP COLLECTION <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
           </div>
 

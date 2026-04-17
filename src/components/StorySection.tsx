@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import cribImg from "@/assets/crib.jpg";
 import babyBlanketImg from "@/assets/baby-blanket.jpg";
 
@@ -158,9 +159,9 @@ export default function StorySection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-16">
-            <button className="bg-chocolate text-cream px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase inline-flex items-center justify-center gap-3 hover:bg-black transition-colors w-full sm:w-auto shadow-md group">
-              ABOUT US <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
+            <Link href="/shop" className="bg-chocolate text-cream px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase inline-flex items-center justify-center gap-3 hover:bg-black transition-colors w-full sm:w-auto shadow-md group">
+              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
             <div className="hidden sm:block">
               <YellowFlower className="rotating-flower w-10 h-10 text-accent-yellow" />
             </div>
