@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { Heart, ArrowUpRight, Flower2 } from "lucide-react";
 import highchairImg from "@/assets/highchair.png";
 import babyImg from "@/assets/baby-pacifier.jpg";
+import Cribimg from "@/assets/crib.jpg";
 // Make sure to save the image you uploaded to the src/assets folder as "hero-romper.png"
 import heroRomperImg from "@/assets/hero-romper.png";
 
@@ -229,7 +230,7 @@ export default function Hero() {
           <div className="fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
             <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-inner">
               <img
-                src={babyImg}
+                src={Cribimg}
                 alt="Product"
                 className="w-full h-full object-cover"
                 loading="lazy"

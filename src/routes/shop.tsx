@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Search, SlidersHorizontal, Plus, ArrowLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DeliveryBanner from "@/components/DeliveryBanner";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,14 @@ const DEMO_PRODUCTS = [
   { id: 8, name: "Leather Pre-Walkers", price: 48, category: "Footwear", img: "https://images.unsplash.com/photo-1622290291720-ac961c43ee30?q=80&w=400&auto=format&fit=crop" },
 ];
 
-const CATEGORIES = ["All", "Tops", "Bottoms", "Outerwear", "Sleepwear", "Accessories", "Footwear"];
+const CATEGORIES = ["All", "Girl Fashion", "Boy Fashion", "Toys", "Diapering", "Gear", "Feeding", "Bath", "Nursery", "Moms", "Health"];
+
+const BUDGET_STORE = [
+  { label: "UNDER ₹299", color: "bg-[#Fdfbf7] border-[#e8dfd8]" },
+  { label: "UNDER ₹599", color: "bg-[#Fdfbf7] border-[#e8dfd8]" },
+  { label: "UNDER ₹799", color: "bg-[#Fdfbf7] border-[#e8dfd8]" },
+  { label: "UNDER ₹999", color: "bg-[#Fdfbf7] border-[#e8dfd8]" },
+];
 
 function ShopPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -120,7 +128,7 @@ function ShopPage() {
         <div className="page-transition-mask absolute inset-0 bg-[#25100a] z-50 pointer-events-none" />
         <div className="shop-content-wrapper max-w-[1400px] mx-auto w-full relative z-40">
         {/* Header Section */}
-        <div className="shop-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div className="shop-header flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
           <div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight uppercase mb-4">
               Our <br /> Collection
@@ -131,18 +139,57 @@ function ShopPage() {
           </div>
           
           <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-3 px-5 py-3 bg-white rounded-full border border-border-light focus-within:border-chocolate transition-colors w-64">
-              <Search className="w-4 h-4 text-text-muted-dark" />
-              <input 
-                type="text" 
-                placeholder="Search products..." 
-                className="bg-transparent border-none outline-none text-sm w-full placeholder:text-text-muted-dark"
-              />
-            </div>
             <button className="flex items-center justify-center gap-2 bg-white border border-border-light px-5 py-3 rounded-full hover:bg-border-light/30 transition-colors">
               <SlidersHorizontal className="w-4 h-4 text-chocolate" />
               <span className="text-sm font-semibold">Filter</span>
             </button>
+          </div>
+        </div>
+
+        {/* Hero Banners */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+          <div className="lg:col-span-2 relative overflow-hidden rounded-3xl bg-[#f0e6dd] flex flex-col justify-center p-12 min-h-[320px] group cursor-pointer border border-[#e8dfd8]">
+            <div className="absolute inset-0 bg-gradient-to-r from-chocolate/10 to-transparent pointer-events-none" />
+            <span className="uppercase text-xs font-bold tracking-widest text-accent-orange mb-3 z-10">Limited Time Only</span>
+            <h2 className="font-serif text-4xl lg:text-5xl text-chocolate max-w-md leading-tight mb-2 z-10">Curated Toy Fest</h2>
+            <p className="text-chocolate/80 max-w-sm mb-8 z-10">FLAT 37% OFF* Club | 32% OFF* All Users. Educational games, soft toys, and puzzles.</p>
+            <button className="bg-chocolate text-cream px-8 py-3 rounded-full w-max text-sm font-semibold hover:bg-opacity-90 transition-colors z-10">
+              Coupon: VALUE
+            </button>
+          </div>
+          
+          <div className="relative overflow-hidden rounded-3xl bg-[#EBEAD6] flex flex-col justify-end p-8 min-h-[320px] group cursor-pointer border border-[#e8dfd8]">
+            <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=600" alt="Summer Edit" className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-40 group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative z-10">
+              <span className="uppercase text-[10px] font-bold tracking-widest text-[#d58d4a] bg-white px-3 py-1 rounded-full mb-3 inline-block shadow-sm">FLAT 40% OFF</span>
+              <h3 className="font-serif text-3xl text-chocolate leading-none">Super Summer Sale</h3>
+            </div>
+          </div>
+        </div>
+
+        {/* Dual Apparel Section */}
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 mb-16">
+          <div className="bg-white border text-chocolate border-border-light rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:-translate-y-1 transition-transform shadow-sm">
+            <span className="font-serif text-xl mb-1">GIRL</span>
+            <span className="text-xs uppercase tracking-widest text-text-muted-dark">For Her →</span>
+          </div>
+          <div className="bg-white border text-chocolate border-border-light rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:-translate-y-1 transition-transform shadow-sm">
+            <span className="font-serif text-xl mb-1">BOY</span>
+            <span className="text-xs uppercase tracking-widest text-text-muted-dark">For Him →</span>
+          </div>
+        </div>
+
+        <div className="mb-16">
+          <h2 className="text-xl font-serif text-chocolate mb-6 flex items-center justify-between">
+            Everyday Essentials
+            <span className="text-xs font-sans tracking-wide text-text-muted-dark font-medium uppercase cursor-pointer hover:text-accent-orange">View Budget Store</span>
+          </h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {BUDGET_STORE.map((store, i) => (
+              <div key={i} className={`${store.color} border rounded-xl py-6 flex flex-col items-center justify-center cursor-pointer hover:shadow-md transition-shadow text-chocolate`}>
+                <span className="text-sm font-semibold tracking-wide">{store.label}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -215,6 +262,7 @@ function ShopPage() {
         </div>
       </div>
       <Footer />
+      <DeliveryBanner />
     </>
   );
 }

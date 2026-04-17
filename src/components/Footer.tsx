@@ -5,9 +5,9 @@ import { Flower2 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const companyLinks = ["Shop Baby Apparels", "Baby Shoes", "Knitwear", "Summer Collection", "Accessories", "Gift Cards"];
-const resourceLinks = ["Customer Support", "Sizing Guide", "Shipping Info", "Return and Exchange Policy", "Order Tracking", "Fabric Care"];
-const aboutLinks = ["About Us", "Our Story", "Sustainability", "Safety Standards", "Reviews"];
+const companyLinks = ["Shop Baby Apparels", "Boy Fashion", "Girl Fashion", "Toys & Gear", "Nursery", "Maternity & Moms"];
+const resourceLinks = ["Shipping & Policies", "Return and Exchange Policy", "Order Tracking", "FirstCry Parenting", "Store Locator"];
+const aboutLinks = ["Company Info", "About Us", "Sustainability", "Safety Standards", "Contact Us"];
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -127,15 +127,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-chocolate-light pt-6 flex flex-col md:flex-row items-center justify-between gap-4 footer-section">
-          <p className="text-[10px] text-text-muted-dark">
-            Made with love by QodeML Labs
-          </p>
-          <div className="flex gap-6">
-            <span className="text-[10px] text-text-muted-dark cursor-pointer hover:text-cream">Terms of Use</span>
-            <span className="text-[10px] text-text-muted-dark cursor-pointer hover:text-cream">Privacy</span>
-            <span className="text-[10px] text-text-muted-dark cursor-pointer hover:text-cream">Cookie Consent Terms</span>
+        <div className="border-t border-chocolate-light mt-12 pt-8 flex flex-col items-center justify-between gap-6 footer-section">
+          
+          <div className="w-full flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col items-center md:items-start gap-2">
+              <span className="text-xs font-semibold tracking-widest text-cream">PAYMENT METHODS</span>
+              <p className="text-[11px] text-text-muted-dark">Credit Cards • Net Banking • ATM & Debit Cards • COD (Cash on Delivery)</p>
+            </div>
+            
+            <div className="flex gap-6">
+              <span className="text-[11px] text-text-muted-dark hover:text-cream cursor-pointer">Terms of Use</span>
+              <span className="text-[11px] text-text-muted-dark hover:text-cream cursor-pointer">Privacy Policy</span>
+              <span className="text-[11px] text-text-muted-dark hover:text-cream cursor-pointer">Shipping & Return</span>
+            </div>
           </div>
+
+          <p className="text-[11px] text-text-muted-dark w-full text-center md:text-left mt-4 border-t border-chocolate-light/50 pt-6">
+            ©2010-2026 www.TinyNest.com. All rights reserved.
+          </p>
         </div>
 
         {/* Giant TINYNEST watermark */}

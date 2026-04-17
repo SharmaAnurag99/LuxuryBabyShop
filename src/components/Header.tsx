@@ -14,25 +14,28 @@ export default function Header() {
         </Link>
 
         {/* Search */}
-        <div className="hidden lg:flex flex-1 items-center gap-3 px-8 border-r border-[#e8dfd8]">
-          <Search className="w-5 h-5 text-gray-500" />
+        <div className="hidden lg:flex flex-1 items-center gap-3 px-8 border-r border-[#e8dfd8] group">
+          <Search className="w-5 h-5 text-gray-400 group-hover:text-accent-orange transition-colors" />
           <input 
             type="text" 
-            placeholder="Search.." 
-            className="bg-transparent border-none outline-none text-sm w-full font-medium placeholder:text-gray-500"
+            placeholder="Search for a Category, Brand or Product.." 
+            className="bg-transparent border-none outline-none text-sm w-full font-medium placeholder:text-gray-400"
           />
         </div>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-stretch">
-          <Link to="/shop" className="flex items-center px-12 text-sm font-semibold hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
-            New Arrivals
+          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+            Boy Fashion
           </Link>
-          <Link to="/shop" className="flex items-center px-12 text-sm font-semibold hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
-            Apparel
+          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+            Girl Fashion
           </Link>
-          <Link to="/shop" className="flex items-center px-12 text-sm font-semibold hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
-            Footwear
+          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+            Toys & Gear
+          </Link>
+          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+            Daily Care
           </Link>
         </nav>
 
