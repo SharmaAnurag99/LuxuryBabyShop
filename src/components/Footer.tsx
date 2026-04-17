@@ -143,7 +143,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[11px] text-text-muted-dark w-full text-center md:text-left mt-4 border-t border-chocolate-light/50 pt-6">
-            ©2010-2026 www.TinyNest.com. All rights reserved.
+            ©Made with ❤️ by <span className="text-cream">QodeML Labs</span>.
           </p>
         </div>
 

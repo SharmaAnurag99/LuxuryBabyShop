@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import familyNurseryImg from "@/assets/family-nursery.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -102,13 +103,16 @@ export default function LovedByFamilies() {
             <p className="text-lg lg:text-xl text-text-muted-dark font-medium max-w-md leading-relaxed">
               Don't just take our word for it, hear from parents who've brought our pieces into their homes.
             </p>
+            <Link href="/shop" className="mt-8 bg-chocolate text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-black transition-colors w-full sm:w-auto justify-center group shadow-md">
+              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
           </div>
 
           {/* Right - Image */}
           <div className="family-image order-1 lg:order-2 w-full h-[400px] lg:h-[500px] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl relative group">
             <div className="absolute inset-0 bg-chocolate/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
             <img
-              src="https://images.unsplash.com/photo-1559454403-b8fb88521f11?q=80&w=800&auto=format&fit=crop"
+              src="https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=800&auto=format&fit=crop"
               alt="Happy family with fashionable baby"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               loading="lazy"

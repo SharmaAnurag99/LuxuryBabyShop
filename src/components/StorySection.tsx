@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import cribImg from "@/assets/crib.jpg";
 import babyBlanketImg from "@/assets/baby-blanket.jpg";
 
@@ -127,7 +128,7 @@ export default function StorySection() {
           <div className="flex gap-4 lg:gap-6 mt-12 lg:mt-32 relative z-10">
             <div className="story-image-container bg-cream rounded-[2rem] w-[200px] lg:w-[280px] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=600&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1549069786-641f4cb652c7?q=80&w=600&auto=format&fit=crop"
                 alt="Baby clothing close up"
                 className="w-full h-[260px] lg:h-[340px] rounded-xl object-cover"
                 loading="lazy"
@@ -137,7 +138,7 @@ export default function StorySection() {
             </div>
             <div className="story-image-container bg-cream rounded-[2rem] mt-16 lg:mt-24 w-[180px] lg:w-[260px] overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=400&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1543866163-971e1ef9e7a8?q=80&w=400&auto=format&fit=crop"
                 alt="Baby on blanket"
                 className="w-full h-[220px] lg:h-[300px] rounded-xl object-cover"
                 loading="lazy"
@@ -158,9 +159,9 @@ export default function StorySection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-16">
-            <button className="bg-chocolate text-cream px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase inline-flex items-center justify-center gap-3 hover:bg-black transition-colors w-full sm:w-auto shadow-md group">
-              ABOUT US <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
+            <Link href="/shop" className="bg-chocolate text-cream px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase inline-flex items-center justify-center gap-3 hover:bg-black transition-colors w-full sm:w-auto shadow-md group">
+              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
             <div className="hidden sm:block">
               <YellowFlower className="rotating-flower w-10 h-10 text-accent-yellow" />
             </div>

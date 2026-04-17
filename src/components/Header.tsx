@@ -1,6 +1,6 @@
 import { Flower2, Search, ShoppingCart, Menu } from "lucide-react";
 
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -8,7 +8,7 @@ export default function Header() {
       <div className="flex items-stretch h-[80px] w-full max-w-[1600px] mx-auto">
         
         {/* Logo */}
-        <Link to="/" className="flex items-center justify-center gap-3 shrink-0 px-8 border-r border-[#e8dfd8] min-w-[240px] cursor-pointer group">
+        <Link href="/" className="flex items-center justify-center gap-3 shrink-0 px-8 border-r border-[#e8dfd8] min-w-[240px] cursor-pointer group">
           <Flower2 className="w-7 h-7 text-chocolate fill-chocolate group-hover:text-accent-orange group-hover:fill-accent-orange transition-colors" />
           <span className="font-sans font-extrabold tracking-[0.2em] text-lg uppercase group-hover:text-accent-orange transition-colors">TINYNEST</span>
         </Link>
@@ -25,16 +25,16 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-stretch">
-          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+          <Link href="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
             Boy Fashion
           </Link>
-          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+          <Link href="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
             Girl Fashion
           </Link>
-          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+          <Link href="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
             Toys & Gear
           </Link>
-          <Link to="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
+          <Link href="/shop" className="flex items-center px-8 text-xs font-semibold uppercase tracking-wider hover:text-accent-orange transition-colors border-r border-[#e8dfd8]">
             Daily Care
           </Link>
         </nav>

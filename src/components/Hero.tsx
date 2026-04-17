@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import gsap from "gsap";
 import { Heart, ArrowUpRight, Flower2 } from "lucide-react";
 import highchairImg from "@/assets/highchair.png";
-import babyImg from "@/assets/baby-pacifier.jpg";
+import babyImg from "@/assets/black.jpg";
 import Cribimg from "@/assets/crib.jpg";
 // Make sure to save the image you uploaded to the src/assets folder as "hero-romper.png"
 import heroRomperImg from "@/assets/hero-romper.png";
@@ -140,7 +140,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[90vh] bg-cream pt-20 pb-32 overflow-visible flex flex-col items-center justify-center z-20">
+    <section ref={containerRef} className="relative w-full min-h-[90vh] bg-cream pt-20 pb-32 overflow-visible border-radius-lg flex flex-col items-center justify-center z-20">
       {/* Background Typography */}
       <h1 className="hero-title absolute top-12 left-0 right-0 text-center font-serif text-[18vw] leading-[0.8] text-chocolate tracking-tight select-none pointer-events-none z-0 mix-blend-multiply opacity-5">
         BABY WEAR
@@ -178,7 +178,7 @@ export default function Hero() {
           <div className="fade-up relative w-[240px]">
             <div className="overflow-hidden rounded-2xl aspect-[4/3]">
               <img
-                src={babyImg}
+                src={babyImg.src}
                 alt="Sleeping baby"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
@@ -189,7 +189,7 @@ export default function Hero() {
             <p className="text-sm text-text-muted-warm mt-4 leading-relaxed">
               Watch how every piece is thoughtfully knit for ultimate comfort.
             </p>
-            <Link to="/shop" className="flex items-center gap-2 mt-3 group w-fit">
+            <Link href="/shop" className="flex items-center gap-2 mt-3 group w-fit">
               <span className="text-sm font-semibold text-chocolate border-b border-chocolate/30 group-hover:border-chocolate transition-colors pb-0.5">Shop Accessories</span>
               <ArrowUpRight className="w-4 h-4 text-chocolate group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
@@ -202,7 +202,7 @@ export default function Hero() {
             {/* Soft glow behind the romper */}
             <div className="hero-glow absolute inset-0 bg-accent-yellow/20 blur-3xl rounded-full scale-75" />
             <img
-              src={heroRomperImg}
+              src={heroRomperImg.src}
               alt="Baby romper on hanger"
               className="w-full h-auto object-contain relative z-20 drop-shadow-2xl"
               width={800}
@@ -221,16 +221,16 @@ export default function Hero() {
             <p className="text-2xl text-chocolate font-light leading-snug">
               Baby <span className="font-serif italic text-accent-orange">Apparels,</span> Beautifully <span className="font-serif italic">Knit</span>
             </p>
-            <Link to="/shop" className="mt-8 bg-chocolate text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-black transition-colors w-full lg:w-auto justify-center group">
-              SHOP COLLECTION <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <Link href="/shop" className="mt-8 bg-chocolate text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-black transition-colors w-full lg:w-auto justify-center group">
+              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
           </div>
 
           {/* Black Friday Card */}
-          <div className="fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
+          <div className=" fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
             <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-inner">
               <img
-                src={Cribimg}
+                src={Cribimg.src}
                 alt="Product"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -246,7 +246,7 @@ export default function Hero() {
                 Black Friday <br />
                 <span className="text-accent-orange font-bold font-sans">50% Off</span>
               </p>
-              <Link to="/shop" className="flex items-center gap-1 mt-2 cursor-pointer group w-fit">
+              <Link href="/shop" className="flex items-center gap-1 mt-2 cursor-pointer group w-fit">
                 <span className="text-xs text-chocolate/80 font-medium group-hover:text-chocolate transition-colors">View collection</span>
                 <ArrowUpRight className="w-3 h-3 text-chocolate/80 group-hover:text-chocolate group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </Link>

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Plus, ArrowUpRight } from "lucide-react";
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   { tag: "New", tagColor: "bg-accent-orange", name: "Organic Cotton Onesie", price: "$35", img: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?q=80&w=400&auto=format&fit=crop" },
-  { tag: "Bestseller", tagColor: "bg-chocolate text-cream", name: "Chunky Knit Cardigan", price: "$45", img: "https://images.unsplash.com/photo-1542355581-caf7454785ca?q=80&w=400&auto=format&fit=crop" },
+  { tag: "Bestseller", tagColor: "bg-chocolate text-cream", name: "Chunky Knit Cardigan", price: "$45", img: "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?q=80&w=400&auto=format&fit=crop" },
   { tag: "Trending", tagColor: "bg-accent-green text-chocolate", name: "Linen Summer Overalls", price: "$28", img: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=400&auto=format&fit=crop" },
 ];
 
@@ -68,7 +68,7 @@ export default function FeaturedProducts() {
             FEATURED <br className="hidden md:block" />
             APPARELS
           </h2>
-          <Link to="/shop" className="bg-chocolate-light border border-cream/20 text-cream px-8 py-3 rounded-full text-xs font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-cream hover:text-chocolate transition-all group">
+          <Link href="/shop" className="bg-chocolate-light border border-cream/20 text-cream px-8 py-3 rounded-full text-xs font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-cream hover:text-chocolate transition-all group">
             VIEW PRODUCT <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
