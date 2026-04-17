@@ -149,7 +149,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between min-h-[600px]">
         
         {/* Left Column */}
-        <div className="flex flex-col gap-12 lg:w-1/3 order-2 lg:order-1 mt-12 lg:mt-0">
+        <div className="flex flex-col gap-12 lg:w-1/3 order-2 lg:order-1 mt-16 lg:mt-32">
           <div className="fade-up">
             <Flower2 className="w-6 h-6 mb-3 text-accent-green" />
             <p className="text-sm text-text-muted-warm tracking-wider uppercase mb-1">
@@ -176,7 +176,7 @@ export default function Hero() {
 
           {/* Baby image card */}
           <div className="fade-up relative w-[240px]">
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
+            {/* <div className="overflow-hidden rounded-2xl aspect-[4/3]">
               <img
                 src={babyImg.src}
                 alt="Sleeping baby"
@@ -185,10 +185,10 @@ export default function Hero() {
                 width={240}
                 height={180}
               />
-            </div>
-            <p className="text-sm text-text-muted-warm mt-4 leading-relaxed">
+            </div> */}
+            {/* <p className="text-sm text-text-muted-warm mt-4 leading-relaxed">
               Watch how every piece is thoughtfully knit for ultimate comfort.
-            </p>
+            </p> */}
             <Link href="/shop" className="flex items-center gap-2 mt-3 group w-fit">
               <span className="text-sm font-semibold text-chocolate border-b border-chocolate/30 group-hover:border-chocolate transition-colors pb-0.5">Shop Accessories</span>
               <ArrowUpRight className="w-4 h-4 text-chocolate group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -196,9 +196,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Center Highchair */}
+        {/* Center */}
         <div className="relative w-full lg:w-1/3 flex justify-center order-1 lg:order-2 mt-8 lg:mt-0">
-          <div className="hero-image relative w-[320px] sm:w-[400px] lg:w-[480px]">
+          <div className="hero-image relative w-[360px] sm:w-[440px] lg:w-[560px] xl:w-[640px]">
             {/* Soft glow behind the romper */}
             <div className="hero-glow absolute inset-0 bg-accent-yellow/20 blur-3xl rounded-full scale-75" />
             <img
@@ -216,7 +216,7 @@ export default function Hero() {
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col gap-12 lg:w-1/3 order-3 lg:items-end lg:text-right mt-16 lg:mt-0 px-4 lg:px-0">
+        <div className="flex flex-col gap-12 lg:w-1/3 order-3 lg:items-end lg:text-right mt-16 lg:mt-32 px-4 lg:px-0">
           <div className="fade-up max-w-[280px]">
             <p className="text-2xl text-chocolate font-light leading-snug">
               Baby <span className="font-serif italic text-accent-orange">Apparels,</span> Beautifully <span className="font-serif italic">Knit</span>
@@ -227,28 +227,26 @@ export default function Hero() {
           </div>
 
           {/* Black Friday Card */}
-          <div className=" fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
-            <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-inner">
+          <div className=" fade-up bg-white rounded-[2rem] p-4 flex gap-4 items-center shadow-lg w-full max-w-[320px] lg:max-w-none lg:mx-[1.5] text-left">
+            <div className="w-16 h-16 rounded-[1rem] overflow-hidden shrink-0 shadow-inner">
               <img
                 src={Cribimg.src}
                 alt="Product"
                 className="w-full h-full object-cover"
                 loading="lazy"
-                width={80}
-                height={80}
+                width={64}
+                height={64}
               />
             </div>
             <div className="flex flex-col justify-center">
-              <span className="inline-block px-2 py-1 bg-white/60 rounded text-[10px] font-bold text-accent-orange uppercase tracking-wider w-fit mb-2">
+              <span className="inline-block px-2 py-0.5 bg-accent-orange/10 rounded-full text-[10px] font-bold text-accent-orange uppercase tracking-wider w-fit mb-1">
                 Sale
               </span>
-              <p className="text-base font-serif text-chocolate leading-tight">
-                Black Friday <br />
-                <span className="text-accent-orange font-bold font-sans">50% Off</span>
+              <p className="text-sm font-serif text-chocolate leading-tight">
+                Black Friday <span className="text-accent-orange font-bold font-sans">50% Off</span>
               </p>
-              <Link href="/shop" className="flex items-center gap-1 mt-2 cursor-pointer group w-fit">
-                <span className="text-xs text-chocolate/80 font-medium group-hover:text-chocolate transition-colors">View collection</span>
-                <ArrowUpRight className="w-3 h-3 text-chocolate/80 group-hover:text-chocolate group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              <Link href="/shop" className="group mt-1 flex items-center gap-1 w-fit">
+                <span className="text-xs text-chocolate/70 font-medium group-hover:text-chocolate transition-colors border-b border-chocolate/20 group-hover:border-chocolate">Shop collection</span>
               </Link>
             </div>
           </div>

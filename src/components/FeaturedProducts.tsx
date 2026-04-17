@@ -60,13 +60,12 @@ export default function FeaturedProducts() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-chocolate text-cream py-24 lg:py-32 px-6 lg:px-12 -mt-12 relative z-10">
+    <section ref={containerRef} className="bg-chocolate text-cream py-24 lg:py-[25] px-6 lg:px-12 -mt-12 relative z-10">
       <div className="max-w-7xl mx-auto pt-16">
         {/* Header */}
         <div className="product-header flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-8">
           <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[0.95] tracking-tight uppercase">
-            FEATURED <br className="hidden md:block" />
-            APPARELS
+            FEATURED APPARELS
           </h2>
           <Link href="/shop" className="bg-chocolate-light border border-cream/20 text-cream px-8 py-3 rounded-full text-xs font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-cream hover:text-chocolate transition-all group">
             VIEW PRODUCT <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />

@@ -57,8 +57,8 @@ export default function DarkShowcase() {
       <div className="w-full max-w-[1600px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 pt-12">
         
         {/* Col 1 - Overlapping Image */}
-        <div className="flex flex-col relative z-[100] md:-mt-32 lg:-mt-48 w-full lg:w-[320px] xl:w-[400px] shrink-0">
-          <div className="hero-overlap-image relative rounded-[24px] overflow-hidden shadow-2xl aspect-[4/3] w-full max-w-[400px] mx-auto lg:mx-0 group">
+        <div className="flex flex-col relative z-[100] md:-mt-40 lg:-mt-32 xl:-mt-72 w-full lg:w-[360px] xl:w-[480px] lg:ml-8 xl:ml-12 shrink-0">
+          <div className="hero-overlap-image relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] w-full max-w-[480px] mx-auto  lg:mx-0 lg:mt-8 group">
             <img
               src={babyImg.src}
               alt="Baby with pacifier"
