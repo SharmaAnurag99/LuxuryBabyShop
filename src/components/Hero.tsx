@@ -38,41 +38,35 @@ export default function Hero() {
     mm.add(
       {
         reduceMotion: "(prefers-reduced-motion: reduce)",
-        isDefault: "(min-width: 0px)" // this acts as a default catch-all
+        isDefault: "(min-width: 0px)"
       },
       (context) => {
         const { reduceMotion } = context.conditions as { reduceMotion: boolean };
-        
-        // If reduced motion is preferred, we skip the animations by setting duration to 0 and immediateRender
         const duration = reduceMotion ? 0 : 1.2;
         const staggerDuration = reduceMotion ? 0 : 0.1;
         const ease = "power3.out";
 
         const tl = gsap.timeline({ defaults: { ease } });
 
-        // Title animation
         tl.from(".hero-title", {
-          y: 100,
+          y: 60,
           autoAlpha: 0,
           duration: reduceMotion ? 0 : 1.2,
           scale: 0.95,
           ease: "expo.out",
         })
-        // Hero image animation
         .from(".hero-image", {
-          y: 80,
+          y: 40,
           autoAlpha: 0,
           duration: reduceMotion ? 0 : 1.2,
           ease: "expo.out"
         }, reduceMotion ? 0 : "-=0.8")
-        // Left and right column elements staggered
         .from(".fade-up", {
-          y: 30,
+          y: 20,
           autoAlpha: 0,
           duration: reduceMotion ? 0 : 0.8,
           stagger: staggerDuration,
         }, reduceMotion ? 0 : "-=0.8")
-        // Flowers popping in
         .from(".accent-flower", {
           scale: 0,
           autoAlpha: 0,
@@ -83,38 +77,25 @@ export default function Hero() {
         }, reduceMotion ? 0 : "-=0.6");
 
         if (!reduceMotion) {
-          // Floating animation for the hero image (clothing on hanger)
           gsap.to(".hero-image img", {
-            y: -15,
-            duration: 2.5,
+            y: -10,
+            duration: 3,
             ease: "sine.inOut",
             yoyo: true,
             repeat: -1,
           });
 
-          // Continuous slow rotation for flowers
           gsap.to(".accent-flower", {
             rotation: "+=360",
-            duration: 30,
+            duration: 40,
             ease: "none",
             repeat: -1,
             transformOrigin: "center center"
           });
 
-          // Subtle pulse for the background glow
-          gsap.to(".hero-glow", {
-            scale: 1.1,
-            opacity: 0.8,
-            duration: 4,
-            ease: "sine.inOut",
-            yoyo: true,
-            repeat: -1,
-          });
-
-          // Parallax mouse move effect for the giant BABY WEAR title
           const handleMouseMove = (e: MouseEvent) => {
-            const xPos = (e.clientX / window.innerWidth - 0.5) * 40; // max moved distance
-            const yPos = (e.clientY / window.innerHeight - 0.5) * 20;
+            const xPos = (e.clientX / window.innerWidth - 0.5) * 30;
+            const yPos = (e.clientY / window.innerHeight - 0.5) * 15;
 
             gsap.to(".hero-title", {
               x: -xPos,
@@ -140,67 +121,45 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[90vh] bg-cream pt-20 pb-32 overflow-visible border-radius-lg flex flex-col items-center justify-center z-20">
+    <section ref={containerRef} className="relative w-full bg-[#FBF8F1] pt-8 lg:pt-12 pb-16 lg:pb-24 flex flex-col items-center justify-start z-20 overflow-hidden">
+      
       {/* Background Typography */}
-      <h1 className="hero-title absolute top-12 left-0 right-0 text-center font-serif text-[18vw] leading-[0.8] text-[#2A1610] tracking-tight select-none pointer-events-none z-0 opacity-100">
+      <h1 className="hero-title absolute top-6 lg:top-8 left-0 right-0 text-center font-serif text-[18vw] xl:text-[19vw] leading-[0.75] text-[#2A1610] tracking-tighter select-none pointer-events-none z-0 opacity-100">
         BABY WEAR
       </h1>
 
-      <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between min-h-[600px]">
+      <div className="container mx-auto px-6 max-w-[1300px] relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between min-h-0 pt-16 lg:pt-24 gap-8 lg:gap-0">
         
         {/* Left Column */}
-        <div className="flex flex-col gap-12 lg:w-1/3 order-2 lg:order-1 mt-12 lg:mt-20 xl:mt-32">
-          <div className="fade-up">
-            <Flower2 className="w-6 h-6 mb-3 text-accent-green" />
-            <p className="text-sm text-text-muted-warm tracking-wider uppercase mb-1">
+        <div className="flex flex-col gap-6 lg:gap-8 lg:w-[32%] order-2 lg:order-1 mt-4 lg:mt-8 z-20">
+          <div className="fade-up relative z-20">
+            <Flower2 className="w-5 h-5 mb-2 text-accent-green" />
+            <p className="text-[10px] sm:text-[11px] font-bold text-text-muted-dark tracking-widest uppercase mb-1">
               Soft, Snug, & Stylish
             </p>
-            <p className="text-xl font-medium text-chocolate">
+            <p className="text-sm font-semibold text-[#2A1610]">
               The Wardrobe for Your Little Star
             </p>
           </div>
 
-          <div className="fade-up flex items-start gap-4">
-            <div className="w-10 h-10 rounded-full bg-accent-orange flex items-center justify-center shrink-0">
-              <Heart className="w-5 h-5 text-white" fill="currentColor" />
+          <div className="fade-up flex items-center gap-3.5 relative z-20">
+            <div className="w-[42px] h-[42px] rounded-full bg-[#FF5C35] flex items-center justify-center shrink-0 shadow-sm">
+              <Heart className="w-5 h-5 text-white" fill="currentColor" strokeWidth={2.5} />
             </div>
-            <div>
-              <p className="font-serif text-3xl leading-none text-chocolate">
+            <div className="flex flex-col justify-center">
+              <p className="font-serif text-[24px] sm:text-[28px] leading-[0.9] text-[#2A1610] tracking-tight uppercase">
                 Love Every
               </p>
-              <p className="font-serif text-3xl leading-none text-chocolate mt-1">
+              <p className="font-serif text-[24px] sm:text-[28px] leading-[0.9] text-[#2A1610] tracking-tight uppercase mt-1">
                 Moment
               </p>
             </div>
           </div>
-
-          {/* Baby image card */}
-          {/* <div className="fade-up relative w-[240px]">
-            <div className="overflow-hidden rounded-2xl aspect-[4/3]">
-              <img
-                src={babyImg.src}
-                alt="Sleeping baby"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
-                loading="lazy"
-                width={240}
-                height={180}
-              />
-            </div>
-            <p className="text-sm text-text-muted-warm mt-4 leading-relaxed">
-              Watch how every piece is thoughtfully knit for ultimate comfort.
-            </p>
-            <Link href="/shop" className="flex items-center gap-2 mt-3 group w-fit">
-              <span className="text-sm font-semibold text-chocolate border-b border-chocolate/30 group-hover:border-chocolate transition-colors pb-0.5">Shop Accessories</span>
-              <ArrowUpRight className="w-4 h-4 text-chocolate group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </Link>
-          </div> */}
         </div>
 
-        {/* Center  */}
-        <div className="relative w-full lg:w-[45%] flex justify-center order-1 lg:order-2 mt-8 lg:-mt-12 z-30">
-          <div className="hero-image relative w-[360px] sm:w-[480px] lg:w-[600px] xl:w-[700px]">
-            {/* Soft glow behind the romper */}
-            <div className="hero-glow absolute inset-0 bg-accent-yellow/20 blur-3xl rounded-full scale-75" />
+        {/* Center Main Product */}
+        <div className="relative w-full lg:w-[45%] flex justify-center order-1 lg:order-2 mt-4 lg:-mt-10 z-30">
+          <div className="hero-image relative w-[320px] sm:w-[420px] lg:w-[500px] xl:w-[600px] 2xl:w-[700px]">
             <img
               src={heroRomperImg.src}
               alt="Baby romper on hanger"
@@ -210,45 +169,44 @@ export default function Hero() {
             />
             
             {/* Flower accents */}
-            <YellowFlower className="accent-flower absolute -left-8 top-[40%] w-12 h-12 text-accent-yellow z-30" />
-            <GreenFlower className="accent-flower absolute -right-4 top-[60%] w-10 h-10 text-accent-green z-30" />
+            <YellowFlower className="accent-flower absolute -left-4 sm:-left-8 top-[35%] w-10 sm:w-14 h-10 sm:h-14 text-accent-yellow z-10" />
+            <GreenFlower className="accent-flower absolute -right-2 sm:-right-4 top-[65%] w-8 sm:w-10 h-8 sm:h-10 text-accent-green z-30" />
           </div>
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col gap-12 lg:w-1/3 order-3 lg:items-end lg:text-right mt-16 lg:mt-20 xl:mt-32 px-4 lg:px-0">
-          <div className="fade-up max-w-[280px]">
-            <p className="text-2xl text-chocolate font-light leading-snug">
-              Baby <span className="font-serif italic text-accent-orange">Apparels,</span> Beautifully <span className="font-serif italic">Knit</span>
+        <div className="flex flex-col gap-6 lg:gap-8 lg:w-[32%] order-3 lg:items-end lg:text-right mt-8 lg:mt-8 z-20">
+          <div className="fade-up w-full lg:max-w-[220px]">
+            <p className="text-[12px] font-semibold text-[#2A1610] tracking-wide mb-5 flex flex-wrap lg:justify-end gap-1.5">
+              Baby <span className="font-serif italic text-[#FF5C35]">Apparels,</span> Beautifully <span className="font-serif italic">Knit</span>
             </p>
-            <Link href="/shop" className="mt-8 bg-chocolate text-cream px-8 py-4 rounded-full text-sm font-semibold tracking-wider uppercase inline-flex items-center gap-2 hover:bg-black transition-colors w-full lg:w-auto justify-center group">
-              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <Link href="/shop" className="bg-[#2A1610] text-[#FFFDF9] px-7 py-3.5 rounded-full text-[10px] font-bold tracking-widest uppercase inline-flex items-center gap-2 hover:bg-[#3d241c] hover:scale-105 transition-all w-max shadow-md group">
+              SHOP NOW <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </Link>
           </div>
 
           {/* Black Friday Card */}
-          <div className=" fade-up bg-card-peach/50 backdrop-blur-md border border-white/40 rounded-3xl p-5 flex gap-5 items-center shadow-xl w-full max-w-[320px] lg:max-w-none text-left">
-            <div className="w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-inner">
+          <div className="fade-up bg-[#FDF8F0] border border-[#F0E6D8] rounded-[1.75rem] p-4 flex gap-4 items-center shadow-[0_4px_24px_-8px_rgba(0,0,0,0.08)] w-full max-w-[320px] lg:max-w-[280px] lg:w-full mt-4 lg:mt-8 relative z-20">
+            <div className="w-[60px] h-[60px] p-1 bg-[#F3ECE1] rounded-2xl shrink-0 overflow-hidden relative shadow-inner">
               <img
                 src={Cribimg.src}
                 alt="Product"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-[12px]"
                 loading="lazy"
-                width={80}
-                height={80}
+                width={60}
+                height={60}
               />
             </div>
-            <div className="flex flex-col justify-center">
-              <span className="inline-block px-2 py-1 bg-white/60 rounded text-[10px] font-bold text-accent-orange uppercase tracking-wider w-fit mb-2">
-                Sale
+            <div className="flex flex-col justify-center text-left">
+              <span className="inline-block rounded-md text-[9px] font-bold text-text-muted-dark tracking-widest uppercase w-fit mb-0.5">
+                Black Friday
               </span>
-              <p className="text-base font-serif text-chocolate leading-tight">
-                Black Friday <br />
-                <span className="text-accent-orange font-bold font-sans">50% Off</span>
+              <p className="text-[15px] font-serif text-[#2A1610] leading-[1.1] mb-1">
+                Big sale <span className="text-[#FF5C35] font-sans font-bold text-[14px]">50% Off</span>
               </p>
-              <Link href="/shop" className="flex items-center gap-1 mt-2 cursor-pointer group w-fit">
-                <span className="text-xs text-chocolate/80 font-medium group-hover:text-chocolate transition-colors">View collection</span>
-                <ArrowUpRight className="w-3 h-3 text-chocolate/80 group-hover:text-chocolate group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+              <Link href="/shop" className="flex items-center gap-1.5 group w-fit">
+                <span className="text-[10px] font-bold tracking-wider text-[#2A1610] border-b border-[#2A1610]/20 group-hover:border-[#2A1610] transition-colors pb-0.5">View collection</span>
+                <ArrowUpRight className="w-3 h-3 text-[#2A1610] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </Link>
             </div>
           </div>
