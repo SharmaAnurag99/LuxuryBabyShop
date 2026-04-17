@@ -30,10 +30,8 @@ export default function StorySection() {
       (context) => {
         const { reduceMotion } = context.conditions as { reduceMotion: boolean };
         const standardDuration = reduceMotion ? 0 : 1;
-        const imgDuration = reduceMotion ? 0 : 1.2;
 
         if (!reduceMotion) {
-          // Heading parallax (only applies if motion isn't reduced)
           gsap.from(".story-heading", {
             scrollTrigger: {
               trigger: containerRef.current,
@@ -41,11 +39,10 @@ export default function StorySection() {
               end: "bottom 20%",
               scrub: 1,
             },
-            y: 100,
+            y: 50,
             autoAlpha: 0.5,
           });
 
-          // Flower rotation on scroll
           gsap.to(".rotating-flower", {
             scrollTrigger: {
               trigger: containerRef.current,
@@ -57,17 +54,16 @@ export default function StorySection() {
             ease: "none"
           });
 
-          // Mask Reveal for Images
           gsap.set(".story-image-container", { clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)" });
           gsap.set(".story-image-container img", { scale: 1.3 });
 
           gsap.to(".story-image-container", {
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top 50%",
+              start: "top 60%",
             },
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 1.5,
+            duration: 1.2,
             stagger: 0.2,
             ease: "power4.inOut"
           });
@@ -75,35 +71,33 @@ export default function StorySection() {
           gsap.to(".story-image-container img", {
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top 50%",
+              start: "top 60%",
             },
             scale: 1,
-            duration: 1.5,
+            duration: 1.2,
             stagger: 0.2,
             ease: "power4.inOut"
           });
         } else {
-          // Images stagger animation fallback for reduced motion
           gsap.from(".story-image-container", {
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top 60%",
+              start: "top 70%",
             },
             autoAlpha: 0,
-            duration: imgDuration,
+            duration: standardDuration,
           });
         }
 
-        // Content fade in
         gsap.from(".story-content > *", {
           scrollTrigger: {
-            trigger: ".story-content",
-            start: "top 80%",
+            trigger: containerRef.current,
+            start: "top 70%",
           },
-          y: reduceMotion ? 0 : 40,
+          y: reduceMotion ? 0 : 30,
           autoAlpha: 0,
           duration: standardDuration,
-          stagger: reduceMotion ? 0 : 0.15,
+          stagger: reduceMotion ? 0 : 0.1,
           ease: "power3.out",
         });
       }
@@ -113,86 +107,88 @@ export default function StorySection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-cream text-chocolate pt-24 lg:pt-32 pb-24 lg:pb-32 px-6 lg:px-12 rounded-t-[2rem] lg:rounded-t-[3rem] relative z-40 -mt-[4rem] lg:-mt-[6rem] overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-20 lg:gap-24 items-center relative z-10">
+    <section ref={containerRef} className="bg-[#FFFDF9] text-chocolate py-20 lg:py-32 px-6 lg:px-12 relative z-40 rounded-[2rem] lg:rounded-[3rem] mt-4 mb-24">
+      <div className="max-w-[1300px] mx-auto story-content">
         
-        {/* Left Column */}
-        <div className="relative">
-          <h2 className="story-heading font-serif text-[4.5rem] lg:text-[6rem] leading-[0.85] tracking-tight uppercase absolute md:-top-16 lg:-top-24 left-0 lg:-left-6 z-0 hidden sm:block">
-            OBSERVE <br /> WITH TEAM
-          </h2>
-          <h2 className="font-serif text-[4rem] leading-[0.85] tracking-tight uppercase mb-8 sm:hidden text-chocolate">
-            OBSERVE <br /> WITH TEAM
-          </h2>
+        {/* Top Row: Heading and Text/Button */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-16 lg:mb-24">
+          <div>
+            <h2 className="story-heading font-serif text-[4rem] lg:text-[6.5rem] xl:text-[7rem] leading-[0.88] tracking-tighter uppercase text-[#2A1610]">
+              OBSERVE <br /> WITH TEAM
+            </h2>
+          </div>
+          
+          <div className="flex flex-col items-start pt-2 lg:pt-4">
+            <p className="text-[1.25rem] lg:text-[1.5rem] leading-[1.4] font-medium text-[#2A1610] tracking-tight mb-8">
+              We're a family run brand started by new parents who couldn't find baby clothes that
+              were truly soft, stylish, and free of harsh chemicals. <span className="text-[#2A1610]/70">Every piece is spun from pure organic cotton, crafted to be lived in.</span>
+            </p>
+            <Link href="/shop" className="bg-[#2A1610] text-[#FFFDF9] px-7 py-3.5 rounded-full text-[11px] font-bold tracking-widest uppercase inline-flex items-center justify-center gap-3 hover:bg-black transition-colors shadow-md group">
+              SHOP NOW <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
 
-          <div className="flex gap-4 lg:gap-6 mt-12 lg:mt-32 relative z-10">
-            <div className="story-image-container bg-cream rounded-[2rem] w-[200px] lg:w-[280px] overflow-hidden">
+        {/* Bottom Row: Images and Quotes */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-24 items-end">
+          
+          {/* Images */}
+          <div className="flex gap-4 lg:gap-6 items-end">
+            <div className="story-image-container w-full max-w-[320px] rounded-[2rem] overflow-hidden shadow-sm h-[320px] lg:h-[440px]">
               <img
                 src="https://images.unsplash.com/photo-1549069786-641f4cb652c7?q=80&w=600&auto=format&fit=crop"
                 alt="Baby clothing close up"
-                className="w-full h-[260px] lg:h-[340px] rounded-xl object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
-                width={280}
-                height={340}
+                width={320}
+                height={440}
               />
             </div>
-            <div className="story-image-container bg-cream rounded-[2rem] mt-16 lg:mt-24 w-[180px] lg:w-[260px] overflow-hidden">
+            <div className="story-image-container w-full max-w-[240px] rounded-[2rem] overflow-hidden shadow-sm h-[220px] lg:h-[300px]">
               <img
                 src="https://images.unsplash.com/photo-1543866163-971e1ef9e7a8?q=80&w=400&auto=format&fit=crop"
                 alt="Baby on blanket"
-                className="w-full h-[220px] lg:h-[300px] rounded-xl object-cover"
+                className="w-full h-full object-cover"
                 loading="lazy"
-                width={260}
+                width={240}
                 height={300}
               />
             </div>
           </div>
-        </div>
 
-        {/* Right Column */}
-        <div className="story-content flex flex-col justify-center max-w-2xl mx-auto lg:mx-0 pt-10">
-          <YellowFlower className="rotating-flower w-12 h-12 text-accent-yellow absolute top-12 right-12 lg:-mt-6 lg:mr-0 hidden lg:block" />
-          
-          <p className="text-[1.75rem] lg:text-[2rem] leading-[1.2] font-semibold tracking-tight mb-8 text-chocolate">
-            We're a family run brand started by new parents who couldn't find baby clothes that
-            were truly soft, stylish, and free of harsh chemicals. <span className="text-text-muted-dark font-medium font-sans text-xl">Every piece is spun from pure organic cotton, crafted to be lived in.</span>
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-16">
-            <Link href="/shop" className="bg-chocolate text-cream px-8 py-3.5 rounded-full text-xs font-semibold tracking-widest uppercase inline-flex items-center justify-center gap-3 hover:bg-black transition-colors w-full sm:w-auto shadow-md group">
-              SHOP NOW <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </Link>
-            <div className="hidden sm:block">
-              <YellowFlower className="rotating-flower w-10 h-10 text-accent-yellow" />
+          {/* Quotes and Rating */}
+          <div className="flex flex-col relative h-full justify-between pb-2">
+            <div className="absolute -top-16 lg:top-0 right-0 flex justify-end w-full">
+              <YellowFlower className="rotating-flower w-14 h-14 text-accent-yellow" />
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-8 border-t border-border-light relative">
-            {/* Quote */}
-            <div className="relative">
-              <p className="text-sm text-chocolate leading-relaxed font-medium">
+            <div className="max-w-[400px] mt-12 lg:mt-auto relative z-10">
+              <p className="text-[#2A1610] text-[15px] leading-[1.6] font-medium mb-12 relative before:content-[''] before:absolute before:-top-6 before:left-0 before:w-16 before:h-[1px] before:bg-[#2A1610]/15">
                 The softest onesies we could’ve chosen. No synthetic feels, beautifully dyed, and they’ve survived hundreds of washes!
-                <br /><br /><span className="font-bold">— Sarah M.</span>
+                <span className="block font-bold mt-4">— Sarah M.</span>
               </p>
-            </div>
 
-            {/* Footer Row */}
-            <div className="flex flex-col justify-center gap-2">
-              <div className="flex items-center gap-2">
-                <span className="text-5xl font-serif tracking-tighter text-chocolate">4.9</span>
-                <Star className="w-5 h-5 text-accent-yellow -mt-2" fill="currentColor" />
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-8 border-t border-[#2A1610]/10 w-full gap-6">
+                <div className="flex items-center gap-5">
+                  <div className="flex flex-col items-center">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[38px] font-serif tracking-tighter text-[#2A1610] leading-none">4.9</span>
+                      <Star className="w-4 h-4 text-accent-yellow -mt-2" fill="currentColor" />
+                    </div>
+                  </div>
+                  <p className="text-[12px] text-[#2A1610] font-semibold tracking-wide leading-tight px-5 border-l border-[#2A1610]/10">
+                    Top rated baby products<br/>parents trust
+                  </p>
+                </div>
+                <button className="flex items-center gap-1.5 text-[#2A1610] group whitespace-nowrap self-start sm:self-auto">
+                  <span className="text-[11px] font-bold tracking-wide border-b border-[#2A1610]/30 group-hover:border-[#2A1610] transition-colors pb-0.5">Read More</span>
+                  <ArrowUpRight className="w-[10px] h-[10px] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </button>
               </div>
-              <p className="text-xs text-text-muted-dark font-medium tracking-wide">
-                Top rated baby products<br/>parents trust
-              </p>
-              <button className="flex items-center gap-2 mt-4 text-chocolate w-fit group">
-                <span className="text-xs font-semibold tracking-wide border-b border-chocolate/30 group-hover:border-chocolate transition-colors pb-0.5">Read More</span>
-                <ArrowUpRight className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </button>
             </div>
           </div>
+          
         </div>
-        
       </div>
     </section>
   );

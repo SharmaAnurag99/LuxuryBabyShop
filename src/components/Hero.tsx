@@ -142,7 +142,7 @@ export default function Hero() {
   return (
     <section ref={containerRef} className="relative w-full min-h-[90vh] bg-cream pt-20 pb-32 overflow-visible border-radius-lg flex flex-col items-center justify-center z-20">
       {/* Background Typography */}
-      <h1 className="hero-title absolute top-12 left-0 right-0 text-center font-serif text-[18vw] leading-[0.8] text-chocolate tracking-tight select-none pointer-events-none z-0 mix-blend-multiply opacity-5">
+      <h1 className="hero-title absolute top-12 left-0 right-0 text-center font-serif text-[18vw] leading-[0.8] text-[#2A1610] tracking-tight select-none pointer-events-none z-0 opacity-100">
         BABY WEAR
       </h1>
 
@@ -175,7 +175,7 @@ export default function Hero() {
           </div>
 
           {/* Baby image card */}
-          <div className="fade-up relative w-[240px]">
+          {/* <div className="fade-up relative w-[240px]">
             <div className="overflow-hidden rounded-2xl aspect-[4/3]">
               <img
                 src={babyImg.src}
@@ -193,12 +193,12 @@ export default function Hero() {
               <span className="text-sm font-semibold text-chocolate border-b border-chocolate/30 group-hover:border-chocolate transition-colors pb-0.5">Shop Accessories</span>
               <ArrowUpRight className="w-4 h-4 text-chocolate group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </Link>
-          </div>
+          </div> */}
         </div>
 
         {/* Center Highchair */}
-        <div className="relative w-full lg:w-1/3 flex justify-center order-1 lg:order-2 mt-8 lg:mt-0">
-          <div className="hero-image relative w-[320px] sm:w-[400px] lg:w-[480px]">
+        <div className="relative w-full lg:w-[45%] flex justify-center order-1 lg:order-2 mt-8 lg:-mt-12 z-30">
+          <div className="hero-image relative w-[360px] sm:w-[480px] lg:w-[600px] xl:w-[700px]">
             {/* Soft glow behind the romper */}
             <div className="hero-glow absolute inset-0 bg-accent-yellow/20 blur-3xl rounded-full scale-75" />
             <img
