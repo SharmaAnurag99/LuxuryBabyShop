@@ -57,19 +57,19 @@ export default function DarkShowcase() {
       <div className="w-full max-w-[1300px] mx-auto flex flex-col lg:flex-row items-end justify-between gap-12 lg:gap-8 relative z-40 lg:pt-8">
         
         {/* Col 1 - Overlapping Image */}
-        <div className="flex flex-col relative z-[100] w-full lg:w-[280px] shrink-0 lg:self-start lg:-mt-24">
-          <div className="hero-overlap-image relative rounded-[24px] overflow-hidden shadow-2xl aspect-[4/3] w-[260px] mx-auto lg:mx-0 group">
+        <div className="flex flex-col relative z-[100] w-full lg:w-[340px] xl:w-[380px] shrink-0 lg:self-start -mt-8 lg:-mt-40 xl:-mt-48">
+          <div className="hero-overlap-image relative rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden shadow-2xl aspect-[5/4] w-[90%] max-w-[380px] mx-auto lg:mx-0 group border-4 border-[#2A1610] lg:border-none">
             <img
               src={babyImg.src}
               alt="Baby with pacifier"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
               loading="lazy"
-              width={260}
-              height={195}
+              width={400}
+              height={320}
             />
           </div>
           
-          <div className="showcase-item mt-8 text-left max-w-[240px] mx-auto lg:mx-0">
+          <div className="showcase-item mt-8 text-left max-w-[280px] mx-auto lg:mx-0 pl-1">
             <p className="text-[13px] text-[#FFFDF9] leading-[1.6]">
               Watch how every piece is thoughtfully crafted to support your baby's development.
             </p>
