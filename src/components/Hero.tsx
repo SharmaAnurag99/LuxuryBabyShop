@@ -149,7 +149,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between min-h-[600px]">
         
         {/* Left Column */}
-        <div className="flex flex-col gap-12 lg:w-1/3 order-2 lg:order-1 mt-12 lg:mt-0">
+        <div className="flex flex-col gap-12 lg:w-1/3 order-2 lg:order-1 mt-12 lg:mt-20 xl:mt-32">
           <div className="fade-up">
             <Flower2 className="w-6 h-6 mb-3 text-accent-green" />
             <p className="text-sm text-text-muted-warm tracking-wider uppercase mb-1">
@@ -196,7 +196,7 @@ export default function Hero() {
           </div> */}
         </div>
 
-        {/* Center Highchair */}
+        {/* Center  */}
         <div className="relative w-full lg:w-[45%] flex justify-center order-1 lg:order-2 mt-8 lg:-mt-12 z-30">
           <div className="hero-image relative w-[360px] sm:w-[480px] lg:w-[600px] xl:w-[700px]">
             {/* Soft glow behind the romper */}
@@ -216,7 +216,7 @@ export default function Hero() {
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col gap-12 lg:w-1/3 order-3 lg:items-end lg:text-right mt-16 lg:mt-0 px-4 lg:px-0">
+        <div className="flex flex-col gap-12 lg:w-1/3 order-3 lg:items-end lg:text-right mt-16 lg:mt-20 xl:mt-32 px-4 lg:px-0">
           <div className="fade-up max-w-[280px]">
             <p className="text-2xl text-chocolate font-light leading-snug">
               Baby <span className="font-serif italic text-accent-orange">Apparels,</span> Beautifully <span className="font-serif italic">Knit</span>
